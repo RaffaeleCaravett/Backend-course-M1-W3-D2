@@ -29,13 +29,6 @@ public class Partecipazione {
     private Stato stato;
 
 
-    @ManyToMany(cascade = CascadeType.ALL)
-    @JoinTable(
-        name = "events_partecipations",
-        joinColumns = @JoinColumn(name = "partecipation_id"),
-        inverseJoinColumns = @JoinColumn(name = "event_id")
-    )
-    private Set<Evento> eventoSet;
     public Partecipazione() {
     }
 
@@ -43,14 +36,6 @@ public class Partecipazione {
         this.persona = persona;
         this.evento = evento;
         this.stato = stato;
-    }
-
-    public Set<Evento> getEventoSet() {
-        return eventoSet;
-    }
-
-    public void setEventoSet(Set<Evento> eventoSet) {
-        this.eventoSet = eventoSet;
     }
 
     public long getId() {
@@ -86,10 +71,6 @@ public class Partecipazione {
     public String toString() {
         return "Partecipazione{" +
             "id=" + id +
-            ", persona=" + persona +
-            ", evento=" + evento +
-            ", stato=" + stato +
-            ", eventoSet=" + eventoSet +
             '}';
     }
 }

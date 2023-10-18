@@ -9,9 +9,9 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import java.text.SimpleDateFormat;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.Random;
-import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 public class Application {
@@ -52,7 +52,12 @@ Persona persona = new Persona("Raffaele","Caravetta","raffaeleCaravetta13@gmail.
             partecipazioneDao.save(partecipazione);
 
 
+            Evento evento1= eventoDAO.getById(212);
+            if(evento1!=null){
+                System.out.println(evento1.getLocation());
+                System.out.println(evento1.getPartecipazioni());
 
+            }
          /*   EventoDAO eventoDAO = new EventoDAO(em);
             System.out.println("Hello World!");
 
