@@ -5,11 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c81e473e-627a-4710-accb-6041ca60914b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/raffaelecaravetta/entities/Location.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/raffaelecaravetta/entities/LocationDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/raffaelecaravetta/entities/Partecipazione.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/raffaelecaravetta/entities/PartecipazioneDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/raffaelecaravetta/entities/Persona.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/raffaelecaravetta/entities/PersonaDao.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/raffaelecaravetta/enums/Sesso.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/raffaelecaravetta/enums/Stato.java" afterDir="false" />
@@ -17,6 +12,12 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/raffaelecaravetta/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/raffaelecaravetta/Application.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/raffaelecaravetta/entities/Evento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/raffaelecaravetta/entities/Evento.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/raffaelecaravetta/entities/EventoDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/raffaelecaravetta/entities/EventoDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/raffaelecaravetta/entities/Location.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/raffaelecaravetta/entities/Location.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/raffaelecaravetta/entities/LocationDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/raffaelecaravetta/entities/LocationDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/raffaelecaravetta/entities/Partecipazione.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/raffaelecaravetta/entities/Partecipazione.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/raffaelecaravetta/entities/PartecipazioneDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/raffaelecaravetta/entities/PartecipazioneDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/raffaelecaravetta/entities/Persona.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/raffaelecaravetta/entities/Persona.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

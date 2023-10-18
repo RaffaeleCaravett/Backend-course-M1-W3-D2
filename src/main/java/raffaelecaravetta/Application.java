@@ -1,16 +1,17 @@
 package raffaelecaravetta;
 
-import raffaelecaravetta.entities.Evento;
-import raffaelecaravetta.entities.EventoDAO;
+import raffaelecaravetta.entities.*;
+import raffaelecaravetta.enums.Sesso;
+import raffaelecaravetta.enums.Stato;
 import raffaelecaravetta.enums.TipoEvento;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
-import java.util.ArrayList;
+import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.List;
 import java.util.Random;
+import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 public class Application {
@@ -19,6 +20,38 @@ public class Application {
         EntityManager em = emf.createEntityManager();
 
         try {
+            SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
+            Date dataNascita = dateFormat.parse("13-10-1994");
+            EventoDAO eventoDAO = new EventoDAO(em);
+
+            Date endDate = new Date();
+            Date startDate = new Date(System.currentTimeMillis() - TimeUnit.DAYS.toMillis(365));
+            long range = endDate.getTime() - startDate.getTime();
+            Random random1 = new Random();
+            Random random = new Random();
+            long randomMilliseconds = (long) (random.nextDouble() * range);
+
+            //
+            Date randomDate = new Date(startDate.getTime() + randomMilliseconds);
+            Evento evento = new Evento("Evento" , randomDate.toString(), TipoEvento.PRIVATO, 10);
+
+Persona persona = new Persona("Raffaele","Caravetta","raffaeleCaravetta13@gmail.com",dataNascita, Sesso.M);
+            PersonaDao personaDao= new PersonaDao(em);
+            personaDao.save(persona);
+
+
+
+            Location location = new Location("Eventissimo","Cosenza");
+            LocationDao locationDao= new LocationDao(em);
+
+           location.setEvento(evento);
+          eventoDAO.save(evento);
+            locationDao.save(location);
+            Partecipazione partecipazione = new Partecipazione(persona,evento, Stato.CONFERMATA);
+            PartecipazioneDao partecipazioneDao= new PartecipazioneDao(em);
+            partecipazioneDao.save(partecipazione);
+
+
 
          /*   EventoDAO eventoDAO = new EventoDAO(em);
             System.out.println("Hello World!");
@@ -42,8 +75,7 @@ public class Application {
                 Date randomDate = new Date(startDate.getTime() + randomMilliseconds);
 
 
-                Evento evento = new Evento("Evento" + i, randomDate.toString(), tipoEvento.get(randomNumber), 10 + i);
-                eventoDAO.save(evento);
+
 
             }
             Evento eventoFromDB = eventoDAO.getById(6);
@@ -60,7 +92,7 @@ public class Application {
             // 4. Esempio di refresh
             eventoDAO.refresh(144);*/
 
-            
+
         }catch (Exception ex){
             System.err.println(ex.getMessage());
         }finally {

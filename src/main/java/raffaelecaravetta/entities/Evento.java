@@ -29,13 +29,13 @@ public class Evento {
 
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(name = "events_partecipations",
-        joinColumns = @JoinColumn(name = "partecipation_id"),
-        inverseJoinColumns = @JoinColumn(name = "event_id"))
+        joinColumns = @JoinColumn(name = "event_id"),
+        inverseJoinColumns = @JoinColumn(name = "partecipation_id"))
     private Set<Partecipazione> partecipazioni; // Non viene creato a DB, serve
     // solo lato Java per permetterci di ottenere la lista di tutti i blog
     // scritti da un certo utente
 
-    @OneToOne(mappedBy = "evento") // 1 to 1 diventa così BIDIREZIONALE
+    @OneToOne // 1 to 1 diventa così BIDIREZIONALE
     private Location location; // Questa non sarà una colonna della tabella
     // serve solo lato Java per permetterci di ottenere il documento
     // di un certo utente
@@ -50,6 +50,21 @@ public class Evento {
         this.numeroMassimoPartecipanti = numeroMassimoPartecipanti;
     }
 
+    public Set<Partecipazione> getPartecipazioni() {
+        return partecipazioni;
+    }
+
+    public void setPartecipazioni(Set<Partecipazione> partecipazioni) {
+        this.partecipazioni = partecipazioni;
+    }
+
+    public Location getLocation() {
+        return location;
+    }
+
+    public void setLocation(Location location) {
+        this.location = location;
+    }
 
     public long getId() {
         return id;

@@ -6,6 +6,8 @@ import raffaelecaravetta.enums.TipoEvento;
 import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
+@Entity
+@Table(name = "people")
 
 public class Persona {
     @Id // Serve per definire chi sarà la chiave primaria
@@ -32,7 +34,7 @@ public class Persona {
 
     @OneToMany(mappedBy = "persona")
     @OrderBy("persona ASC")
-    private List<Partecipazione> blogPosts; // Non viene creato a DB, serve
+    private List<Partecipazione> partecipazioni; // Non viene creato a DB, serve
     // solo lato Java per permetterci di ottenere la lista di tutti i blog
     // scritti da un certo utente
 
@@ -92,11 +94,11 @@ public class Persona {
     }
 
     public List<Partecipazione> getBlogPosts() {
-        return blogPosts;
+        return partecipazioni ;
     }
 
     public void setBlogPosts(List<Partecipazione> blogPosts) {
-        this.blogPosts = blogPosts;
+        this.partecipazioni = blogPosts;
     }
 
 
@@ -109,7 +111,7 @@ public class Persona {
             ", email='" + email + '\'' +
             ", dataNascita=" + dataNascita +
             ", sesso=" + sesso +
-            ", blogPosts=" + blogPosts +
+            ", blogPosts=" + partecipazioni  +
             '}';
     }
 }

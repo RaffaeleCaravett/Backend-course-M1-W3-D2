@@ -7,6 +7,8 @@ import raffaelecaravetta.enums.TipoEvento;
 import javax.persistence.*;
 import java.util.Set;
 
+@Entity
+@Table(name = "partecipations")
 public class Partecipazione {
     @Id // Serve per definire chi sarà la chiave primaria
     @GeneratedValue // Si usa se si vuol far gestire gli id al DB
@@ -17,8 +19,8 @@ public class Partecipazione {
     @JoinColumn(name = "persona_id", nullable = false)
     private Persona persona;
 
-    @Enumerated(EnumType.STRING)
-    @Column(name = "evento")
+    @ManyToOne
+    @JoinColumn(name = "evento_id")
     private Evento evento;
 
 
@@ -27,10 +29,12 @@ public class Partecipazione {
     private Stato stato;
 
 
-    @ManyToMany
-    @JoinTable(name = "events_partecipations",
-        joinColumns = @JoinColumn(name = "event_id"),
-        inverseJoinColumns = @JoinColumn(name = "partecipation_id"))
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(
+        name = "events_partecipations",
+        joinColumns = @JoinColumn(name = "partecipation_id"),
+        inverseJoinColumns = @JoinColumn(name = "event_id")
+    )
     private Set<Evento> eventoSet;
     public Partecipazione() {
     }
@@ -39,6 +43,14 @@ public class Partecipazione {
         this.persona = persona;
         this.evento = evento;
         this.stato = stato;
+    }
+
+    public Set<Evento> getEventoSet() {
+        return eventoSet;
+    }
+
+    public void setEventoSet(Set<Evento> eventoSet) {
+        this.eventoSet = eventoSet;
     }
 
     public long getId() {
