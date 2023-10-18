@@ -1,9 +1,9 @@
 package raffaelecaravetta.entities;
 
-import org.hibernate.annotations.GeneratorType;
 import raffaelecaravetta.enums.TipoEvento;
 
 import javax.persistence.*;
+import java.util.Set;
 
 
 @Entity
@@ -26,6 +26,19 @@ public class Evento {
 
     @Column(name = "numero_massimo_partecipanti")
     private double numeroMassimoPartecipanti;
+
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(name = "events_partecipations",
+        joinColumns = @JoinColumn(name = "partecipation_id"),
+        inverseJoinColumns = @JoinColumn(name = "event_id"))
+    private Set<Partecipazione> partecipazioni; // Non viene creato a DB, serve
+    // solo lato Java per permetterci di ottenere la lista di tutti i blog
+    // scritti da un certo utente
+
+    @OneToOne(mappedBy = "evento") // 1 to 1 diventa così BIDIREZIONALE
+    private Location location; // Questa non sarà una colonna della tabella
+    // serve solo lato Java per permetterci di ottenere il documento
+    // di un certo utente
 
     public Evento() {
     }
@@ -73,4 +86,16 @@ public class Evento {
     public void setNumeroMassimoPartecipanti(double numeroMassimoPartecipanti) {
         this.numeroMassimoPartecipanti = numeroMassimoPartecipanti;
     }
+
+    @Override
+    public String toString() {
+        return "Evento{" +
+            "id=" + id +
+            ", titolo='" + titolo + '\'' +
+            ", dataEvento='" + dataEvento + '\'' +
+            ", status=" + status +
+            ", numeroMassimoPartecipanti=" + numeroMassimoPartecipanti +
+            '}';
+    }
+
 }

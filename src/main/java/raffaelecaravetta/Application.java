@@ -20,7 +20,7 @@ public class Application {
 
         try {
 
-            EventoDAO eventoDAO = new EventoDAO(em);
+         /*   EventoDAO eventoDAO = new EventoDAO(em);
             System.out.println("Hello World!");
 
             List<TipoEvento> tipoEvento = new ArrayList<>();
@@ -58,7 +58,9 @@ public class Application {
             eventoDAO.delete(6);
 
             // 4. Esempio di refresh
-            eventoDAO.refresh(8);
+            eventoDAO.refresh(144);*/
+
+            
         }catch (Exception ex){
             System.err.println(ex.getMessage());
         }finally {

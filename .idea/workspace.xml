@@ -5,8 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c81e473e-627a-4710-accb-6041ca60914b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/raffaelecaravetta/entities/Location.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/raffaelecaravetta/entities/LocationDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/raffaelecaravetta/entities/Partecipazione.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/raffaelecaravetta/entities/PartecipazioneDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/raffaelecaravetta/entities/Persona.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/raffaelecaravetta/entities/PersonaDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/raffaelecaravetta/enums/Sesso.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/raffaelecaravetta/enums/Stato.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/raffaelecaravetta/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/raffaelecaravetta/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/raffaelecaravetta/entities/Evento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/raffaelecaravetta/entities/Evento.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/raffaelecaravetta/entities/EventoDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/raffaelecaravetta/entities/EventoDAO.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -25,9 +34,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 7
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
   <component name="ProjectId" id="2Wt9lknFQeVn8luHm4rxiilLPk7" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -38,7 +47,8 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main"
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Desktop/Backend/W3-D2"
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />

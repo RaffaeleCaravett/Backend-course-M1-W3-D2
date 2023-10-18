@@ -41,15 +41,15 @@ public class EventoDAO {
     }
 
     public void refresh(long id){
-        Evento eventoFromDB2 = this.getById(6);
+        Evento eventoFromDB2 = this.getById(id);
         if (eventoFromDB2 != null) {
             eventoFromDB2.setTitolo("Nuovo Titolo");
             System.out.println("PRE REFRESH");
-            System.out.println(eventoFromDB2);
+            System.out.println(eventoFromDB2.toString());
 
             em.refresh(eventoFromDB2);
             System.out.println("POST REFRESH");
-            System.out.println(eventoFromDB2);
+            System.out.println(eventoFromDB2.toString());
         }else{
             System.err.println("Impossibile eseguire il refresh sull'elemento con id " + id + " : non esiste!");
         }
