@@ -10,11 +10,15 @@ import javax.persistence.*;
 @Entity
 @NamedQuery(
     name = "getPartiteVinteInCasa",
-    query = "SELECT p FROM PartitaDiCalcio p WHERE p.squadraVincente = :team AND p.squadraDiCasa = :team"
+    query = "SELECT p FROM PartitaDiCalcio p WHERE p.squadraVincente =  p.squadraDiCasa"
 )
 @NamedQuery(
     name = "getPartiteVinteInTrasferta",
-    query = "SELECT p FROM PartitaDiCalcio p WHERE p.squadraVincente = :team AND p.squadraOspite = :team"
+    query = "SELECT p FROM PartitaDiCalcio p WHERE p.squadraVincente =  p.squadraOspite "
+)
+@NamedQuery(
+    name = "getPartitePareggiate",
+    query = "SELECT p FROM PartitaDiCalcio p WHERE p.squadraVincente IS NULL "
 )
 public class PartitaDiCalcio extends Evento{
 

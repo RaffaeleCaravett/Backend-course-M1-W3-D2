@@ -14,7 +14,6 @@ public class GaraDiAtletica extends Evento {
         joinColumns = @JoinColumn(name = "gara_id"),
         inverseJoinColumns = @JoinColumn(name = "persona_id"))
     private Set<Persona> atleti;
-
     @ManyToOne
     private Persona vincitore;
 

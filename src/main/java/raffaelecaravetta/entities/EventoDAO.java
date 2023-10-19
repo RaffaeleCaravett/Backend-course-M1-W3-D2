@@ -76,20 +76,45 @@ public class EventoDAO {
         return query.getResultList();
     }
 
-    public void getPartiteVinteInCasa(String team) {
+    public void getPartiteVinteInCasa() {
         TypedQuery<PartitaDiCalcio> query = em.createNamedQuery("getPartiteVinteInCasa", PartitaDiCalcio.class);
-        query.setParameter("team", team);
-        System.out.println("Lista di partite vinte in casa da " + team);
+        System.out.println("Lista di partite vinte in casa" );
         query.getResultList().forEach(System.out::println);
         System.out.println("Numero totale partite vinte in casa : " +query.getResultList().size());
     }
 
-    public void getPartiteVinteInTrasferta(String team) {
+    public void getPartiteVinteInTrasferta() {
         TypedQuery<PartitaDiCalcio> query = em.createNamedQuery("getPartiteVinteInTrasferta", PartitaDiCalcio.class);
-        query.setParameter("team", team);
-        System.out.println("Lista di partite vinte in trasferta da " + team);
+        System.out.println("Lista di partite vinte in trasferta");
         query.getResultList().forEach(System.out::println);
         System.out.println("Numero totale partite vinte in trasferta : " +query.getResultList().size());
     }
 
-}
+    public void getPartitePareggiate() {
+        TypedQuery<PartitaDiCalcio> query = em.createNamedQuery("getPartitePareggiate", PartitaDiCalcio.class);
+        System.out.println("Lista di partite pareggiate");
+        query.getResultList().forEach(System.out::println);
+        System.out.println("Numero totale partite pareggiate : " +query.getResultList().size());
+    }
+    public void getGareDiAtleticaPerVincitore(Persona vincitore) {
+        TypedQuery<GaraDiAtletica> query = em.createQuery("SELECT g FROM GaraDiAtletica g WHERE g.vincitore = :vincitore", GaraDiAtletica.class);
+        query.setParameter("vincitore", vincitore);
+
+        List<GaraDiAtletica> gare = query.getResultList();
+        System.out.println("gare vinte da " + vincitore.getNome() + ": " + gare.size());
+    }
+    public void getGareDiAtleticaPerPartecipante(Persona partecipante) {
+                TypedQuery<GaraDiAtletica> query = em.createQuery(
+                    "SELECT g FROM GaraDiAtletica g " +
+                        "WHERE :partecipante MEMBER OF g.atleti",
+                    GaraDiAtletica.class
+                );
+
+            query.setParameter("partecipante", partecipante);
+
+        List<GaraDiAtletica> gare = query.getResultList();
+        System.out.println("Presenze " + partecipante.getNome() + ": " + gare.size());
+        }
+    }
+
+

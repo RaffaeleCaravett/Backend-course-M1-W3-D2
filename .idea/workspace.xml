@@ -14,6 +14,7 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/raffaelecaravetta/entities/GaraDiAtletica.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/raffaelecaravetta/entities/GaraDiAtletica.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/raffaelecaravetta/entities/PartitaDiCalcio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/raffaelecaravetta/entities/PartitaDiCalcio.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/raffaelecaravetta/entities/Persona.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/raffaelecaravetta/entities/Persona.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/raffaelecaravetta/entities/PersonaDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/raffaelecaravetta/entities/PersonaDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -67,6 +68,11 @@
           <properties class="javax.persistence.PersistenceException" package="javax.persistence" />
           <option name="timeStamp" value="1" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/raffaelecaravetta/entities/PersonaDao.java</url>
+          <line>57</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>

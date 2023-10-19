@@ -40,15 +40,15 @@ public class Persona {
     // solo lato Java per permetterci di ottenere la lista di tutti i blog
     // scritti da un certo utente
 
+
     @ManyToMany
     @JoinTable(name = "gare_persone",
         joinColumns = @JoinColumn(name = "persona_id"),
-        inverseJoinColumns = @JoinColumn(name = "gare_id"))
+        inverseJoinColumns = @JoinColumn(name = "gara_id"))
     private Set<GaraDiAtletica> gare;
-
     public Persona(){}
 
-    public Persona(long id, String nome, String cognome, String email, Date dataNascita, Sesso sesso, List<Partecipazione> partecipazioni, Set<GaraDiAtletica> gare) {
+    public Persona(long id, String nome, String cognome, String email, Date dataNascita, Sesso sesso, List<Partecipazione> partecipazioni) {
         this.id = id;
         this.nome = nome;
         this.cognome = cognome;
