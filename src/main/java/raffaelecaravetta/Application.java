@@ -52,17 +52,23 @@ public class Application {
             Concerto concerto1 = new Concerto("concerto del cuore",randomDate.toString(),TipoEvento.PUBBLICO,50, Genere.CLASSICO,false);
 
 
-            //eventoDAO.save(concerto);
-           // eventoDAO.save(concerto1);
+
+            PartitaDiCalcio partita1 = new PartitaDiCalcio("Partita 1", randomDate.toString(), TipoEvento.PUBBLICO, 100,
+                "Team C", "Team A", "Team A", 3, 1);
+
+            PartitaDiCalcio partita2 = new PartitaDiCalcio("Partita 2", randomDate.toString(), TipoEvento.PUBBLICO, 200,
+                "Team B", "Team D", "Team B", 2, 2);
 
 
+            eventoDAO.save(partita1);
+             eventoDAO.save(partita2);
             eventoDAO.getConcertiInStreaming(false).forEach(System.out::println);
             System.out.println("-----------------");
             eventoDAO.getConcertiPerGenere(Genere.CLASSICO).forEach(System.out::println);
-
-
-
-
+            System.out.println("-----------------");
+            eventoDAO.getPartiteVinteInCasa("Team A");
+            System.out.println("-----------------");
+            eventoDAO.getPartiteVinteInTrasferta("Team A");
 
 
 

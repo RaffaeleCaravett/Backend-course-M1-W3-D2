@@ -73,9 +73,23 @@ public class EventoDAO {
         TypedQuery<Concerto> query = em.createQuery("SELECT c FROM Concerto c WHERE c.genere = :genere", Concerto.class);
         query.setParameter("genere", genere);
 
-
         return query.getResultList();
+    }
 
+    public void getPartiteVinteInCasa(String team) {
+        TypedQuery<PartitaDiCalcio> query = em.createNamedQuery("getPartiteVinteInCasa", PartitaDiCalcio.class);
+        query.setParameter("team", team);
+        System.out.println("Lista di partite vinte in casa da " + team);
+        query.getResultList().forEach(System.out::println);
+        System.out.println("Numero totale partite vinte in casa : " +query.getResultList().size());
+    }
+
+    public void getPartiteVinteInTrasferta(String team) {
+        TypedQuery<PartitaDiCalcio> query = em.createNamedQuery("getPartiteVinteInTrasferta", PartitaDiCalcio.class);
+        query.setParameter("team", team);
+        System.out.println("Lista di partite vinte in trasferta da " + team);
+        query.getResultList().forEach(System.out::println);
+        System.out.println("Numero totale partite vinte in trasferta : " +query.getResultList().size());
     }
 
 }

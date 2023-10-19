@@ -6,13 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="c81e473e-627a-4710-accb-6041ca60914b" name="Changes" comment="">
       <change afterPath="$PROJECT_DIR$/src/main/java/raffaelecaravetta/entities/Concerto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/raffaelecaravetta/entities/PartitaDiCalcio.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/raffaelecaravetta/enums/Genere.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/raffaelecaravetta/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/raffaelecaravetta/Application.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/raffaelecaravetta/entities/EventoDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/raffaelecaravetta/entities/EventoDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/raffaelecaravetta/entities/GaraDiAtletica.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/raffaelecaravetta/entities/GaraDiAtletica.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/raffaelecaravetta/entities/PartitaDiCalcio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/raffaelecaravetta/entities/PartitaDiCalcio.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/raffaelecaravetta/entities/Persona.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/raffaelecaravetta/entities/Persona.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
     </list>
