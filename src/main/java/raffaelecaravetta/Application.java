@@ -1,21 +1,20 @@
 package raffaelecaravetta;
 
 import raffaelecaravetta.entities.*;
+import raffaelecaravetta.enums.Genere;
 import raffaelecaravetta.enums.Sesso;
-import raffaelecaravetta.enums.Stato;
 import raffaelecaravetta.enums.TipoEvento;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import java.text.SimpleDateFormat;
-import java.util.Arrays;
 import java.util.Date;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 public class Application {
-    private static final EntityManagerFactory emf = Persistence.createEntityManagerFactory("W3-D2");
+    private static final EntityManagerFactory emf = Persistence.createEntityManagerFactory("W3-D4");
     public static void main(String[] args) {
         EntityManager em = emf.createEntityManager();
 
@@ -35,21 +34,31 @@ public class Application {
             Date randomDate = new Date(startDate.getTime() + randomMilliseconds);
            // Evento evento = new Evento("Evento" , randomDate.toString(), TipoEvento.PRIVATO, 10);
 
-            Persona persona = new Persona("Raffaele","Caravetta","raffaeleCaravetta13@gmail.com",dataNascita, Sesso.M);
+           /* Persona persona = new Persona("Raffaele","Caravetta","raffaeleCaravetta13@gmail.com",dataNascita, Sesso.M);
             PersonaDao personaDao= new PersonaDao(em);
             personaDao.save(persona);
-
 
 
             Location location = new Location("Eventissimo","Cosenza");
             LocationDao locationDao= new LocationDao(em);
 
-            //location.setEvento(evento);
-       //   eventoDAO.save(evento);
+            location.setEvento(evento);
+       eventoDAO.save(evento);
             locationDao.save(location);
+*/
 
 
-        //    Concerto concerto = new Concerto("concerto del cuore",randomDate);
+            Concerto concerto = new Concerto("concerto del cuore",randomDate.toString(),TipoEvento.PRIVATO,50, Genere.POP,true);
+            Concerto concerto1 = new Concerto("concerto del cuore",randomDate.toString(),TipoEvento.PUBBLICO,50, Genere.CLASSICO,false);
+
+
+            //eventoDAO.save(concerto);
+           // eventoDAO.save(concerto1);
+
+
+            eventoDAO.getConcertiInStreaming(false).forEach(System.out::println);
+            System.out.println("-----------------");
+            eventoDAO.getConcertiPerGenere(Genere.CLASSICO).forEach(System.out::println);
 
 
 

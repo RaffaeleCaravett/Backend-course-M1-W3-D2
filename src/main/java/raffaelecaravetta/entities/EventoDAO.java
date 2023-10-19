@@ -1,7 +1,12 @@
 package raffaelecaravetta.entities;
 
+import raffaelecaravetta.enums.Genere;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
+import javax.persistence.TypedQuery;
+import java.util.List;
+
 public class EventoDAO {
     private final EntityManager em;
 
@@ -54,4 +59,23 @@ public class EventoDAO {
             System.err.println("Impossibile eseguire il refresh sull'elemento con id " + id + " : non esiste!");
         }
     }
+
+
+    public List<Concerto> getConcertiInStreaming(boolean bool){
+        TypedQuery<Concerto> query = em.createQuery("SELECT c FROM Concerto c WHERE c.inStreaming = :bool", Concerto.class);
+        query.setParameter("bool", bool);
+
+
+        return query.getResultList();
+
+    }
+    public List<Concerto> getConcertiPerGenere(Genere genere){
+        TypedQuery<Concerto> query = em.createQuery("SELECT c FROM Concerto c WHERE c.genere = :genere", Concerto.class);
+        query.setParameter("genere", genere);
+
+
+        return query.getResultList();
+
+    }
+
 }

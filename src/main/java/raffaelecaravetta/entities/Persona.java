@@ -48,18 +48,36 @@ public class Persona {
 
     public Persona(){}
 
-    public Persona( String nome, String cognome, String email, Date dataNascita, Sesso sesso) {
+    public Persona(long id, String nome, String cognome, String email, Date dataNascita, Sesso sesso, List<Partecipazione> partecipazioni, Set<GaraDiAtletica> gare) {
+        this.id = id;
         this.nome = nome;
         this.cognome = cognome;
         this.email = email;
         this.dataNascita = dataNascita;
         this.sesso = sesso;
+        this.partecipazioni = partecipazioni;
+        this.gare = gare;
     }
 
     public long getId() {
         return id;
     }
 
+    public Set<GaraDiAtletica> getGare() {
+        return gare;
+    }
+
+    public void setGare(Set<GaraDiAtletica> gare) {
+        this.gare = gare;
+    }
+
+    public List<Partecipazione> getPartecipazioni() {
+        return partecipazioni;
+    }
+
+    public void setPartecipazioni(List<Partecipazione> partecipazioni) {
+        this.partecipazioni = partecipazioni;
+    }
 
     public String getNome() {
         return nome;
