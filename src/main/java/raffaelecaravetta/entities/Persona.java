@@ -6,6 +6,8 @@ import raffaelecaravetta.enums.TipoEvento;
 import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
+import java.util.Set;
+
 @Entity
 @Table(name = "people")
 
@@ -37,6 +39,12 @@ public class Persona {
     private List<Partecipazione> partecipazioni; // Non viene creato a DB, serve
     // solo lato Java per permetterci di ottenere la lista di tutti i blog
     // scritti da un certo utente
+
+    @ManyToMany
+    @JoinTable(name = "gare_persone",
+        joinColumns = @JoinColumn(name = "persona_id"),
+        inverseJoinColumns = @JoinColumn(name = "gare_id"))
+    private Set<GaraDiAtletica> gare;
 
     public Persona(){}
 

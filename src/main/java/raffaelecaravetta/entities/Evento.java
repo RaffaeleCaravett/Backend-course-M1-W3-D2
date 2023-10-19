@@ -7,8 +7,9 @@ import java.util.Set;
 
 
 @Entity
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 @Table(name = "events")
-public class Evento {
+public abstract class Evento {
     @Id // Serve per definire chi sarà la chiave primaria
     @GeneratedValue // Si usa se si vuol far gestire gli id al DB
     // private UUID id; // UUID genera come id una stringa univoca
